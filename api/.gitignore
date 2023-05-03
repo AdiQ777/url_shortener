@@ -1,5 +1,11 @@
+# editor
 .idea
 
+# python
 **/*.pyc
 
+# djanggo
 db.sqlite3
+.mypy_cache
+.pytest_cache
+__pychache__
