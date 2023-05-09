@@ -3,6 +3,7 @@
 
 # python
 **/*.pyc
+venv
 
 # djanggo
 db.sqlite3
