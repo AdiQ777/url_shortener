@@ -9,3 +9,5 @@ db.sqlite3
 .mypy_cache
 .pytest_cache
 __pychache__
+htmlcov
+.coverage
