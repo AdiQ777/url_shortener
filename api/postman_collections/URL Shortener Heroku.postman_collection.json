@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "a6ded82c-a501-4510-a8b4-97752b05c270",
+		"name": "URL Shortener Heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16893789"
+	},
+	"item": [
+		{
+			"name": "Create short-url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"https://www.geeksforgeeks.org/python-reading-contents-of-pdf-using-ocr-optical-character-recognition/\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://young-ravine-69382.herokuapp.com/api/v1/urls/",
+					"protocol": "https",
+					"host": [
+						"young-ravine-69382",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"urls",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
