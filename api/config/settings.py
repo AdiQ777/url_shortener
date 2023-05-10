@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 import dj_database_url
+from config.swagger_settings import SPECTACULAR_SETTINGS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -133,9 +134,20 @@ REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
-SPECTACULAR_SETTINGS = {
-    "TITLE": "URL Shortener API",
-    "DESCRIPTION": "Best URL Shortener API in the world",
-    "VERSION": "1.0.0",
-    "SERVE_INCLUDE_SCHEMA": False,
-}
+# SPECTACULAR_SETTINGS = {
+#     "TITLE": "URL Shortener API",
+#     "DESCRIPTION": "Best URL Shortener API in the world",
+#     "VERSION": "1.0.0",
+#     "SERVE_INCLUDE_SCHEMA": False,
+# }
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "young-ravine-69382.herokuapp.com",
+    "https://young-ravine-69382.herokuapp.com/",
+]
+INTERNAL_IPS = ALLOWED_HOSTS
+
+CSRF_TRUSTED_ORIGINS = ("https://oung-ravine-69382.herokuapp.com",)
