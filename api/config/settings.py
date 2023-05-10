@@ -148,12 +148,17 @@ REST_FRAMEWORK = {
 # }
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "young-ravine-69382.herokuapp.com",
-    "https://young-ravine-69382.herokuapp.com/",
-]
+
 INTERNAL_IPS = ALLOWED_HOSTS
 
-CSRF_TRUSTED_ORIGINS = ("https://oung-ravine-69382.herokuapp.com",)
+CSRF_TRUSTED_ORIGINS = os.environ.get("DJ_CSRF_TRUSTED_ORIGINS", "").split()
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": os.environ.get("REDIS_CONNECTION_STRING"),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+    }
+}

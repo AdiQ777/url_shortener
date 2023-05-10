@@ -74,6 +74,8 @@ To run this project, you will need to add the following environment variables to
 
 `DJ_SU_PASSWORD` - Default superuser password
 
+`DJ_CSRF_TRUSTED_ORIGINS` - Domains list for CSRF validation
+
 Also variables to your ./envs/postgres.env file:
 
 `POSTGRES_USER` - Postgres root user
@@ -85,6 +87,13 @@ Also variables to your ./envs/postgres.env file:
 `POSTGRES_HOST` - Database host name (docker compose service name)
 
 `POSTGRES_PORT` - Database port
+
+And variables to your ./envs/redis.env file:
+
+`REDIS_HOST` - Running server Redis host
+
+`REDIS_PORT` - Running server Redis port
+
 ## Running Tests
 
 To run tests, run the following command
