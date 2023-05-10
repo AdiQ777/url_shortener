@@ -2,6 +2,7 @@
 .idea
 
 # python
+venv
 **/*.pyc
 
 # djanggo
